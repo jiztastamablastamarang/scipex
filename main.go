@@ -312,11 +312,6 @@ func extractDocstring(sym *scip.SymbolInformation) string {
 	return strings.Join(sym.Documentation, "\n")
 }
 
-// extractLine retrieves the starting line of the symbol's definition.
-func extractLine(doc *scip.Document, sym *scip.SymbolInformation) int32 {
-	return extractLineFrom(doc, sym)
-}
-
 // extractLineFrom retrieves the starting line from the occurrence with the Definition role.
 func extractLineFrom(doc *scip.Document, sym *scip.SymbolInformation) int32 {
 	for _, occ := range doc.Occurrences {
